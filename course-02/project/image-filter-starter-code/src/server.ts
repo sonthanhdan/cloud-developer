@@ -39,7 +39,7 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util';
 
   // new endpoint
   app.get("/filteredimage", async (req, res, next) => {
-    const imageUrl = req.query.image_url;
+    const imageUrl = req.query.image_url as string;
     if (!imageUrl) {
       res.status(400).send('image_url can not be empty')
       return
